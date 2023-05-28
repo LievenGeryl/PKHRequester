@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 internal class Program
 {
-    private static async Task Main(string[] args)
+    private static void Main(string[] args)
     {
-        for (int i = 1; i < 11; i++)
+        Task.Run(async () =>
         {
-            Console.WriteLine($"Sending request {i}...");
-            await MakeRequest();
-            await Task.Delay(500);
-        }
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine($"Sending request {i}...");
+                await MakeRequest();
+                await Task.Delay(500);
+            }
+        }).GetAwaiter().GetResult();
     }
 
     public static async Task MakeRequest()
