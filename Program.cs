@@ -18,7 +18,7 @@ internal class Program
 
     public static async Task MakeRequest()
     {
-        HttpClient client = new();
+        HttpClient client = new HttpClient();
         var uri = "http://data.pkhonor.net/data/raw/item_prices.txt";
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string filePath = Path.Combine(desktopPath, "PKHRequesterOutput.txt");
