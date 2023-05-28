@@ -8,16 +8,15 @@ internal class Program
 {
     private static async Task Main(string[] args)
     {
-        Program program = new();
         for (int i = 1; i < 11; i++)
         {
             Console.WriteLine($"Sending request {i}...");
-            await program.MakeRequest();
+            await MakeRequest();
             await Task.Delay(500);
         }
     }
 
-    public async Task MakeRequest()
+    public static async Task MakeRequest()
     {
         HttpClient client = new();
         var uri = "http://data.pkhonor.net/data/raw/item_prices.txt";
