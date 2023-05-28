@@ -52,7 +52,7 @@ internal class Program
                 {
                     await File.AppendAllTextAsync(stackPath, ex.StackTrace);
                 }
-                await File.AppendAllTextAsync(stackPath, "|||| END OF STACK TRACE |||| \n \n \n");
+                await File.AppendAllTextAsync(stackPath, "\n \n \n|||| END OF STACK TRACE ||||");
 
                 Console.WriteLine("Content written to PKHRequesterStackTrace.txt successfully.");
             }
